@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "639785712622",
+    "project_id": "simplelogin-be8be",
+    "storage_bucket": "simplelogin-be8be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:639785712622:android:535bc7bb8bc737caaaecff",
+        "android_client_info": {
+          "package_name": "com.example.simple_login"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB7GVH1GWowgR-7DE_ryRMmdqKo-ukqHE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
