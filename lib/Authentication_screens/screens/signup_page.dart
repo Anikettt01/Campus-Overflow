@@ -17,16 +17,15 @@ class _SignupScreenState extends State<SignupScreen> {
   final _passwordController = TextEditingController();
   final _fullnameController = TextEditingController();
   final _usernameController = TextEditingController();
-  final _collegenameController = TextEditingController(); // Removed College Name controller
-  final _interestController = TextEditingController(); // Removed Programming Interests controller
+  final _collegenameController = TextEditingController();
+  final _interestController = TextEditingController();
 
   final user = FirebaseAuth.instance.currentUser;
   bool _isPasswordVisible = false;
   String? _authErrorMessage;
-  String _selectedCollege = 'PICT'; // Default college
-  List<String> _selectedInterests = []; // Default interests
+  String _selectedCollege = 'PICT'; 
+  List<String> _selectedInterests = []; 
 
-  // List of available colleges and interests
   final List<String> _colleges = ['PICT', 'VIT', 'COEP', 'MIT', 'PCCOE'];
   final List<String> _interests = [
     'Competitive Programming',
@@ -73,8 +72,8 @@ class _SignupScreenState extends State<SignupScreen> {
       await apis.createUser(
         _fullnameController.text,
         _emailController.text,
-        _selectedCollege, // Use selected college
-        _selectedInterests.join(','), // Join interests with comma
+        _selectedCollege,
+        _selectedInterests.join(','),
         _usernameController.text,
       );
     } on FirebaseAuthException catch (e) {
@@ -220,7 +219,6 @@ class _SignupScreenState extends State<SignupScreen> {
                                 Checkbox(
                                   value: _selectedInterests.contains(value),
                                   onChanged: (bool? newValue) {
-                                    // Update the _selectedInterests list here
                                     setState(() {
                                       if (newValue!) {
                                         _selectedInterests.add(value);
@@ -282,7 +280,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                       SizedBox(
                         height: 15,
-                      ), // Added spacing
+                      ), 
                       if (_authErrorMessage != null)
                         Text(
                           _authErrorMessage!,
@@ -292,7 +290,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         ),
                       SizedBox(
                         height: 15,
-                      ), // Added spacing
+                      ),
                       GestureDetector(
                         onTap: signUp,
                         child: Container(
@@ -321,7 +319,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                       SizedBox(
                         height: 20,
-                      ), // Added spacing
+                      ),
                       Align(
                         alignment: Alignment.bottomRight,
                         child: Column(
