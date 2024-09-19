@@ -32,14 +32,12 @@ class _ChattingHomePageState extends State<ChattingHomePage> {
           }
           if (snapshot.hasData) {
             final data = snapshot.data?.docs;
-            // list.clear(); // Clear the list before adding new items
             list = data?.map((e) => ChatUser.fromJson(e.data())).toList() ??[];
             if(list.isNotEmpty){
               return ListView.builder(
                 itemCount: list.length,
                 physics: BouncingScrollPhysics(),
                 itemBuilder: (context, index) {
-                  // return Text('Name: ${list[index]}');
                   return ChatUserCard(user: list[index]);
                 },
               );
