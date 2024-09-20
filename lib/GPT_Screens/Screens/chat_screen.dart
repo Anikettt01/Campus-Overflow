@@ -2,7 +2,6 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-// import 'package:speech_to_text/speech_to_text.dart' as stt;
 import '../providers/chat_provider.dart';
 import '../providers/model_provider.dart';
 import '../widgets/chat_widget.dart';
@@ -22,14 +21,12 @@ class _ChatScreenState extends State<ChatScreen> with AutomaticKeepAliveClientMi
   late TextEditingController textEditingController;
   late ScrollController _listScrollController;
   late FocusNode focusNode;
-  // late stt.SpeechToText _speech;
 
   @override
   void initState() {
     _listScrollController = ScrollController();
     textEditingController = TextEditingController();
     focusNode = FocusNode();
-    // _speech = stt.SpeechToText();
     super.initState();
   }
   @override
@@ -39,7 +36,6 @@ class _ChatScreenState extends State<ChatScreen> with AutomaticKeepAliveClientMi
     focusNode.dispose();
     super.dispose();
   }
-  // List<ChatModel> chatList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +68,6 @@ class _ChatScreenState extends State<ChatScreen> with AutomaticKeepAliveClientMi
               ),
             ),
             if (_isTyping) ...[
-              // ignore: prefer_const_constructors
               SpinKitThreeBounce(
                 color: Colors.white,
                 size: 18,
@@ -86,7 +81,6 @@ class _ChatScreenState extends State<ChatScreen> with AutomaticKeepAliveClientMi
                   children: [
                     Expanded(
                       child: TextField(
-                        // style: const TextStyle(color: Colors.black),
                         controller: textEditingController,
                         onSubmitted: (value) async{
                           await sendMessageFCT(
@@ -99,20 +93,12 @@ class _ChatScreenState extends State<ChatScreen> with AutomaticKeepAliveClientMi
                             borderRadius: BorderRadius.circular(20),
                           ),
                           hintText: "How can I help you",
-                          // hintStyle: TextStyle(color: Colors.black)
                         ),
                         minLines: 1,
                         maxLines: 10,
                       ),
                     ),
-                    // IconButton(
-                    //   // onPressed:  _startListening,
-                    //   icon: const Icon(
-                    //     Icons.mic,
-                    //     // color: Colors.black,
-                    //     size: 30,
-                    //   ),
-                    // ),
+                   
                     IconButton(
                       onPressed: () async {
                         await sendMessageFCT(
@@ -200,38 +186,6 @@ class _ChatScreenState extends State<ChatScreen> with AutomaticKeepAliveClientMi
     }
   }
 
-  // Future<void> _startListening() async {
-  //   if (!_isListening) {
-  //     bool available = await _speech.initialize(
-  //       onStatus: (status) {
-  //         print('Speech recognition status: $status');
-  //       },
-  //       onError: (errorNotification) {
-  //         print('Speech recognition error: $errorNotification');
-  //       },
-  //     );
-  //
-  //     if (available) {
-  //       setState(() {
-  //         _isListening = true;
-  //       });
-  //       _speech.listen(
-  //         onResult: (result) {
-  //           setState(() {
-  //             textEditingController.text = result.recognizedWords;
-  //           });
-  //         },
-  //         // ignore: deprecated_member_use
-  //         partialResults: true,
-  //       );
-  //     }
-  //   } else {
-  //     setState(() {
-  //       _isListening = false;
-  //     });
-  //     _speech.stop();
-  //   }
-  // }
 
   @override
   bool get wantKeepAlive => true;
