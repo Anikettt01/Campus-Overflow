@@ -42,7 +42,6 @@ class _AnswerDetailsPageState extends State<AnswerDetailsPage> {
               itemBuilder: (context, index) {
                 return ListTile(
                   title: Text(widget.answers[index]),
-                  // Add more details if needed, like user who submitted the answer or date/time
                 );
               },
             ),
