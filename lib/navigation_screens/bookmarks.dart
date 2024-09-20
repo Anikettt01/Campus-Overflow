@@ -40,8 +40,7 @@ class _BookmarksPageState extends State<BookmarksPage> {
       body: RefreshIndicator(
         onRefresh: () async {
           setState(() {
-            // You may want to fetch the bookmarked questions again from Firestore
-            // or perform any other necessary operations to refresh the data
+           
           });
         },
         child: StreamBuilder<QuerySnapshot>(
