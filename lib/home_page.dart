@@ -44,34 +44,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         actions: [
-          // GestureDetector(
-          //   onTap: () {
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(builder: (context) => const ProfilePage()),
-          //     );
-          //   },
-          //   child:  Padding(
-          //     padding: EdgeInsets.only(right: 8.0),
-          //     child: StreamBuilder<DocumentSnapshot>(
-          //         stream: FirebaseFirestore.instance.collection('users').doc(currentUser.email).snapshots(),
-          //         builder: (context,snapshot){
-          //           if(snapshot.hasData){
-          //             final userData = snapshot.data!.data() as Map<String, dynamic>;
-          //             final String username = userData['Full Name'];
-          //             return ProfileImage(username: username,size: 18,);
-          //           }
-          //           else if (snapshot.hasError) {
-          //             return Center(child: Text('Error${snapshot.error}'));
-          //           }
-          //           return Center(child: CircularProgressIndicator());
-          //         })
-          //   ),
-          // ),\
-
-            // IconButton(onPressed: (){
-            //   FirebaseAuth.instance.signOut();
-            // }, icon: Icon(Icons.logout))
           Padding(
             padding: const EdgeInsets.only(right: 10.0),
             child: GestureDetector(
