@@ -94,7 +94,6 @@ class _UserChatScreenState extends State<UserChatScreen> {
             },
             icon: Icon(Icons.arrow_back, color: Colors.white),
           ),
-          // ProfileImage(size: 18),
           SizedBox(width: 15),
           Expanded(
             child: Column(
@@ -155,7 +154,6 @@ class _UserChatScreenState extends State<UserChatScreen> {
                         keyboardType: TextInputType.multiline,
                         maxLines: null,
                         style: TextStyle(color: Colors.white),
-                        // Set text color to white
                         decoration: InputDecoration(
                           hintText: 'Type something...',
                           hintStyle: TextStyle(color: Colors.grey),
