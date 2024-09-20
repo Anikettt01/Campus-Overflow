@@ -61,7 +61,8 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> with TickerProvid
   }
 
   Widget _buildTop3Bars() {
-    if (users.length < 3) return Container();  // To ensure there are enough users
+     // ensure there are enough users
+    if (users.length < 3) return Container(); 
     List<User> topThreeUsers = users.take(3).toList();
     int maxScore = topThreeUsers.map((user) => user.score).reduce((a, b) => a > b ? a : b);
 
