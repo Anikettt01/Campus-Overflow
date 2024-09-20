@@ -19,7 +19,6 @@ class _AddAnswerScreenState extends State<AddAnswerScreen> {
     String content = _contentController.text.trim();
 
     if (content.isNotEmpty) {
-      // Get the full name of the current user
       DocumentSnapshot userSnapshot = await FirebaseFirestore.instance.collection('users').doc(userId).get();
       String userName = userSnapshot['username'];
 
@@ -27,13 +26,12 @@ class _AddAnswerScreenState extends State<AddAnswerScreen> {
         'content': content,
         'upvotes': 0,
         'date_posted': DateTime.now(),
-        'user_id': userId, // Store user_id as a string
-        'username': userName, // Store full name of the user
-        'question_id': widget.questionId, // Store question_id as a string
+        'user_id': userId,
+        'username': userName,
+        'question_id': widget.questionId,
       });
-      Navigator.pop(context); // Close the AddAnswerScreen after adding the answer
+      Navigator.pop(context);
     } else {
-      // Show an error message if the content is empty
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
