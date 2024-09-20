@@ -113,7 +113,6 @@ class _BookmarksPageState extends State<BookmarksPage> {
                             fontSize: 14,
                           ),
                         ),
-                        // You can add more widgets here, such as the bookmark button
                       ],
                     ),
                   ),
