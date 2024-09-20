@@ -103,7 +103,7 @@ class _AddQuestionPageState extends State<AddQuestionPage> {
                   onTap: () {
                     setState(() {
                       selectedTag = tag;
-                      isButtonEnabled = true; // Enable button when a tag is selected
+                      isButtonEnabled = true; 
                     });
                   },
                   child: Padding(
@@ -135,7 +135,7 @@ class _AddQuestionPageState extends State<AddQuestionPage> {
             const SizedBox(height: 25),
             Container(
               child: ElevatedButton(
-                onPressed: isButtonEnabled ? _addQuestion : null, // Disable button if no tag is selected
+                onPressed: isButtonEnabled ? _addQuestion : null,
                 child: const Text('Add Question'),
               ),
             ),
@@ -161,8 +161,8 @@ class _AddQuestionPageState extends State<AddQuestionPage> {
         Question(
           title: title,
           description: description,
-          code: '', // No code field
-          codeDescription: '', // No code description field
+          code: '', 
+          codeDescription: '', 
           tags: [selectedTag!],
         ),
       );
