@@ -24,7 +24,6 @@ class _NavBarState extends State<NavBar> {
   @override
   void initState() {
     super.initState();
-    // Fetch user data from Firestore
     fetchUserData();
   }
 
@@ -42,7 +41,7 @@ class _NavBarState extends State<NavBar> {
   Future<void> _showLogoutDialog(BuildContext context) async {
     return showDialog<void>(
       context: context,
-      barrierDismissible: false, // user must tap button for close dialog
+      barrierDismissible: false, 
       builder: (BuildContext dialogContext) {
         return AlertDialog(
           title: Text('Log Out'),
@@ -51,14 +50,14 @@ class _NavBarState extends State<NavBar> {
             TextButton(
               child: Text('No'),
               onPressed: () {
-                Navigator.of(dialogContext).pop(); // Dismiss the dialog
+                Navigator.of(dialogContext).pop();
               },
             ),
             TextButton(
               child: Text('Yes'),
               onPressed: () {
                 FirebaseAuth.instance.signOut();
-                Navigator.of(dialogContext).pop(); // Dismiss the dialog
+                Navigator.of(dialogContext).pop(); 
               },
             ),
           ],
