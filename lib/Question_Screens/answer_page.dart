@@ -35,7 +35,7 @@ class _AnswerPageState extends State<AnswerPage> {
               widget.question.title,
               style: TextStyle(
                 fontSize: 25,
-                fontWeight: FontWeight.bold, // Title color
+                fontWeight: FontWeight.bold, 
               ),
               textAlign: TextAlign.center,
             ),
@@ -44,7 +44,7 @@ class _AnswerPageState extends State<AnswerPage> {
               widget.question.description,
               style: TextStyle(
                 fontSize: 18,
-                color: Colors.black87, // Description color
+                color: Colors.black87,
               ),
             ),
             if (widget.question.codeDescription.isNotEmpty)
@@ -57,7 +57,7 @@ class _AnswerPageState extends State<AnswerPage> {
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
-                      color: Colors.blue, // Code label color
+                      color: Colors.blue, 
                     ),
                   ),
                   SizedBox(height: 8),
@@ -65,7 +65,7 @@ class _AnswerPageState extends State<AnswerPage> {
                     widget.question.codeDescription,
                     style: TextStyle(
                       fontSize: 18,
-                      color: Colors.black87, // Code description color
+                      color: Colors.black87,
                     ),
                   ),
                 ],
@@ -79,7 +79,7 @@ class _AnswerPageState extends State<AnswerPage> {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 filled: true,
-                fillColor: Colors.grey[200], // Text field background color
+                fillColor: Colors.grey[200], 
               ),
               minLines: 5,
               maxLines: null,
@@ -98,7 +98,6 @@ class _AnswerPageState extends State<AnswerPage> {
                       ),
                     );
                   } else {
-                    // Show confirmation dialog
                     showDialog(
                       context: context,
                       builder: (BuildContext context) {
